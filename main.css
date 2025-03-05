@@ -1,0 +1,125 @@
+:root {
+  --Purple-50: hsl(260, 100%, 95%);
+  --Purple-300: hsl(264, 82%, 80%);
+  --Purple-500: hsl(263, 55%, 52%);
+
+  --White: hsl(0, 0%, 100%);
+  --Grey-100: hsl(214, 17%, 92%);
+  --Grey-200: hsl(0, 0%, 81%);
+  --Grey-400: hsl(224, 10%, 45%);
+  --Grey-500: hsl(217, 19%, 35%);
+  --Dark-blue: hsl(219, 29%, 14%);
+  --Black: hsl(0, 0%, 7%);
+}
+* {
+  box-sizing: border-box;
+}
+
+/* font family */
+
+.barlow-semi-condensed-medium {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.barlow-semi-condensed-semibold {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.barlow-semi-condensed-medium-italic {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.barlow-semi-condensed-semibold-italic {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+/* font family */
+
+body {
+  background-color: var(--Grey-200);
+}
+
+main {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.author {
+  display: flex;
+  gap: 10px;
+}
+
+.author img {
+  width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.one {
+  grid-area: 1/1 / 1 / span 2;
+  background-color: var(--Purple-500);
+  color: white;
+}
+.two {
+  color: white;
+  background-color: var(--Grey-500);
+}
+.three {
+  color: var(--Grey-500);
+  background-color: var(--White);
+}
+.four {
+  grid-area: 2/2/2 / span 2;
+  background-color: var(--Dark-blue);
+  color: var(--Grey-200);
+}
+.five {
+  grid-area: 1/4 / span 2/4;
+  background-color: white;
+  color: var(--Grey-500);
+}
+
+@media (width<1012px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    grid-area: auto;
+  }
+  .one {
+    grid-auto-rows: 1/2;
+  }
+  .two {
+    grid-auto-rows: 1/1;
+  }
+  .three {
+    grid-auto-rows: 1/1;
+  }
+  .four {
+    grid-auto-rows: 1/2;
+  }
+  .five {
+    grid-auto-rows: 1/2;
+  }
+}
